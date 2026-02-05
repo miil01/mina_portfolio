@@ -1,1 +1,0 @@
-# mina_portfolio
