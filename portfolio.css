@@ -1,0 +1,3819 @@
+html {
+  overflow-y: auto;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+
+
+body {
+  background-image: url("./img/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* ================================
+   top 全体
+================================ */
+#top {
+  display: flex;
+  flex-direction: column;  /* 縦に並べる */
+  justify-content: center; /* 垂直中央 */
+  align-items: center;     /* 水平中央 */
+  height: 100vh;           /* 画面全体の高さ */
+}
+
+/* ---　装飾リボン --- */
+.heart_frame {
+  width: 50%;
+  height: auto;
+  filter: drop-shadow(0 0.2em 0.2em rgba(0,0,0,0.3)); /* ドロップシャドウ */
+}
+
+/* ---　タイトル　ポートフォリオ --- */
+.top_title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%); /* 中央揃え */
+  font-family: 'Emilys Candy', cursive;
+  color: rgba(70, 58, 50, 1);
+  font-size: clamp(2rem, 10vw, 20rem);
+  text-align: center;
+  line-height: 1;
+  text-shadow: 0 0.05em 0.05em rgba(0,0,0,0.3);  
+  z-index: 1; 
+}
+
+/* --- 装飾　いちご--- */
+.top_strawberry {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  filter: drop-shadow(0 0.2em 0.2em rgba(0,0,0,0.3)); 
+  
+}
+
+/* ---　装飾リボン --- */
+.red_ribon{
+    width: 50%;
+    position: absolute;
+    top: 43%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    filter: drop-shadow(0 0.2em 0.2em rgba(0,0,0,0.3)); 
+}
+
+ /* --- 装飾ケーキ --- */
+.top_cake{
+    width: 10%;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* 中央揃え */
+    filter: drop-shadow(0 0.2em 0.2em rgba(0,0,0,0.3)); /* ドロップシャドウ */
+}
+
+
+/* --- PC用メニュー --- */
+.menu_list {
+  display: flex;
+  justify-content: center;   /* 水平中央 */
+  gap: clamp(0.3em, 1vw, 1em);
+  list-style: none;         /* 丸や線を消す */
+  margin-top: -10%;         /* 上への位置調整 */
+  padding: 0 5%;            /* 両端余白 */
+  box-sizing: border-box;   /* パディング込みで幅計算 */
+  flex-wrap: nowrap;        /* 折り返さない */
+}
+
+.menu_list li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu_list a {
+  font-family: 'Emilys Candy', cursive;
+  font-size: clamp(0.6rem, 2.5vw, 2rem); /* 画面幅に応じて縮小 */
+  white-space: nowrap;                    /* 文字折り返し防止 */
+  text-decoration: none;                  /* 下線を消す */
+  background-color: rgba(255, 208, 196, 0.7);
+
+  padding: clamp(0.15em, 0.8vw, 0.35em) clamp(0.4em, 1.5vw, 0.8em);
+  border-radius: 10em;
+
+  filter: drop-shadow(0 0.2em 0.2em rgba(0,0,0,0.3));
+  -webkit-text-stroke: 0.3px rgba(254, 156, 142, 1); /* 文字縁取り */
+  -webkit-text-fill-color: white;
+  transition: transform 0.2s;
+  min-width: 40px;
+  max-width: 200px;
+  flex-shrink: 1; /* 必要に応じて縮む */
+}
+
+.menu_list a:hover {
+  transform: scale(1.1);
+  background-color: rgba(255, 208, 196, 0.9);
+}
+
+
+/* ================================
+   Profile Section
+================================ */
+#profile {
+  position: relative;
+  text-align: center;
+  padding-top: 15vh;
+}
+
+/* 背景フレーム */
+.profile_backgraund_fram {
+  position: absolute;
+  top: -10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  z-index: -1;
+}
+
+/* ================================
+   タイトルデザイン
+================================ */
+.profile_title {
+    display: inline-block;
+    position: relative;
+    top: 9rem;
+    font-family: 'Emilys Candy', cursive;
+    font-size: clamp(1rem, 2.5vw, 4rem);
+    padding: 0.2em 0.8em;
+    background-color: rgba(255, 208, 196, 0.7);
+    border-radius: 0.6em;
+    color: white;
+    text-shadow:
+        3px 3px 0 rgba(254,156,142,1),
+        -3px 3px 0 rgba(254,156,142,1),
+        3px -3px 0 rgba(254,156,142,1),
+        -3px -3px 0 rgba(254,156,142,1);
+}
+
+/* ================================
+   フレーム＋写真ボックス
+================================ */
+.profile_box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 6%;
+    margin-top: 3vh;
+}
+
+/* 左：フレーム */
+.profile_frame {
+  width: 37%;
+  height: auto;
+  position: relative;
+  filter: drop-shadow(0 0.2em 0.2em rgba(0,0,0,0.3));
+}
+
+/* 右：写真 */
+.my_picture {
+  width: 40%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* ================================
+   プロフィールテキスト
+================================ */
+.profile_text {
+  position: absolute;
+  top: 20%;
+  left: 15%;
+  max-width: 90%;
+  color: rgba(70, 58, 50, 1);
+  font-size: clamp(0.3rem, 2.3vw, 2rem);
+  display: flex;
+  flex-direction: column;
+  gap: 5rem; /* 行間 */
+  font-family: 'Emilys Candy', cursive;
+  white-space: normal; /* 折り返しOK */
+}
+
+/* 各行 */
+.profile_text .row {
+  display: flex;
+  flex-wrap: wrap;  /* 幅が足りない場合は折り返す */
+  gap: 0.5rem;     /* ラベルと値の間隔 */
+  margin: 0;
+}
+
+/* ラベル */
+.label {
+  font-weight: 600;
+  text-align: right;
+  min-width: 80px;  /* 幅を揃える */
+}
+
+.label::after {
+  content: ":";
+  margin-left: 0.2em;
+}
+
+/* 値 */
+.value {
+  text-align: left;
+  flex: 1; /* 残り幅を自動使用 */
+}
+
+/* ================================
+   フレーム下メッセージ
+================================ */
+.profile_message {
+  position: absolute;
+  top: 70%;          /* フレーム内下部に調整 */
+  left: 27%;
+  transform: translateX(-50%);
+  width: 90%;        /* フレーム内に収める */
+  text-align: center;
+  font-size: clamp(0.3rem, 2vw, 2rem);
+  line-height: 1.6;
+  color: rgba(70, 58, 50, 1);
+  white-space: normal; 
+  font-family: "Shippori Mincho", serif;
+}
+
+/* ================================
+   skill & license 全体
+================================ */
+/* ラッパーで全体をまとめて下げる */
+.skill_wrapper {
+    position: relative;   /* 親基準 */
+    top: 2vh;            /* 全体をまとめて下に下げる量 */
+}
+
+/* 元の #skill_license は padding-top だけ残す */
+#skill_license {
+    text-align: center;
+    padding-top: 20vh;
+    position: relative;
+}
+
+
+/* 親：左右フレーム */
+.skill_license_box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 6%;
+    margin-top: 3vh;
+}
+
+/* 背景・装飾 */
+.skill_license_backgraund_fram,
+.skill_license_strawberry {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+.skill_license_backgraund_fram { width: 100%; top: -20%; }
+
+.skill_license_strawberry {
+    width: 65%;
+    top: -30%;
+    filter: drop-shadow(0 0.2em 0.2em rgba(0,0,0,0.3));
+}
+
+/* 左右フレームの画像 */
+.license_frame,
+.skill_fram {
+    filter: drop-shadow(0 0.2em 0.2em rgba(0,0,0,0.3));
+}
+.license_frame { width: 36%; }
+.skill_fram { width: 42%; }
+
+/* タイトル */
+.skill_licensee_title {
+    display: inline-block;
+    position: relative;
+    top: 5.5rem;
+    font-family: 'Emilys Candy', cursive;
+    font-size: clamp(1rem, 2.5vw, 4rem);
+    padding: 0.2em 0.8em;
+    background-color: rgba(255, 208, 196, 0.7);
+    border-radius: 0.6em;
+    color: white;
+    text-shadow:
+        3px 3px 0 rgba(254,156,142,1),
+        -3px 3px 0 rgba(254,156,142,1),
+        3px -3px 0 rgba(254,156,142,1),
+        -3px -3px 0 rgba(254,156,142,1);
+    margin: 0;
+}
+
+/* ================================
+   共通テキスト設定
+================================ */
+.license_text,
+.skill_text {
+    position: absolute;
+    top: 5%;
+    width: 38%;
+    padding: 1rem 1.4rem;
+    color: rgba(70, 58, 50, 1);
+    font-family: "Shippori Mincho", serif;
+    line-height: 1.5em;
+}
+
+.license_text { left: 6%; font-size: 2rem; }
+.skill_text { right: 8.5%; font-size: 1.5rem; }
+
+/* テキストタイトル */
+.license_text h2,
+.license_text h3,
+.skill_title {
+    font-family: 'Emilys Candy', cursive;
+    text-align: center;
+    color: rgb(255, 51, 55);
+    margin-bottom: 1rem;
+}
+
+.license_text h2,
+.license_text h3 { font-size: 2.2rem; }
+.skill_title { font-size: 2.2rem; }
+
+/* ================================
+   リスト（星アイコン）
+================================ */
+.license_text li,
+.skill_text li {
+    margin-left: 1.2rem;
+    list-style: none;
+    position: relative;
+}
+
+.license_text ul,
+.skill_text ul {
+    text-align: left;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+/* 星アイコン共通設定 */
+.license_text li::before,
+.skill_text li::before {
+    content: "";
+    position: absolute;
+    background-image: url("img/star.svg");
+    background-repeat: no-repeat;
+    filter: brightness(0) saturate(100%) invert(18%)
+            sepia(86%) saturate(7371%) hue-rotate(351deg)
+            brightness(91%) contrast(114%);
+}
+
+/* 個別サイズ調整 */
+.license_text li::before {
+     left: 6rem; 
+     top: 0.6rem; 
+     width: 2rem; 
+     height: 2rem; 
+     background-size: cover; 
+    }
+.skill_text li::before {
+     left: -1.6rem; 
+     top: 0.4rem; 
+     width: 1.1rem; 
+     height: 1.1rem; 
+     background-size: contain; 
+    }
+
+/* 小さい項目用 */
+.small_item {
+     font-size: 1.2rem; 
+     line-height: 1.7em;
+      display: inline-block; 
+      transform: translateY(1px); 
+    }
+
+/* ================================
+   四分割グリッド
+================================ */
+.skill_grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2rem;
+    row-gap: 1rem;
+}
+
+/* 点線クロス */
+.skill_grid::before,
+.skill_grid::after {
+    content: "";
+    position: absolute;
+}
+.skill_grid::before { 
+    top: 0; 
+    bottom: 0; 
+    left: 50%; 
+    border-left: 7px 
+    dotted #ff4d4d; 
+}
+.skill_grid::after {
+     top: 50%; 
+     left: 0; 
+     right: 0; 
+     border-top: 7px dotted #ff4d4d; 
+    }
+
+/* セクションタイトル */
+.skill_grid h3 {
+     font-size: 1.4rem; 
+     text-align: center; 
+     color: rgb(255,51,55); 
+    }
+
+/* グリッド内テキスト右寄せ */
+.skill_grid > div { 
+    padding-left: 1.5rem; 
+}
+
+/* ライセンス側テキスト右寄せ */
+.license_text li {
+     padding-left: 10rem; 
+    }
+
+/* 線装飾 */
+.license_dotline {
+     border-top: 7px dotted #ff4d4d; 
+     width: 80%; 
+     margin: 1rem auto; 
+    }
+
+
+
+
+/* ================================
+   characteristics 全体
+================================ */
+
+.characteristics_wrapper{
+  position: relative;
+  top: 5vh;            /* 全体をまとめて下に下げる量 */
+}
+#characteristics {
+  text-align: center;
+  padding-top: 20vh;
+  position: relative;
+}
+
+/* タイトル */
+.characteristics_title {
+    display: inline-block;
+    position: relative;
+    top: 6rem;
+    font-family: 'Emilys Candy', cursive;
+    font-size: clamp(1rem, 2.5vw, 4rem);
+    padding: 0.2em 0.8em;
+    background-color: rgba(255, 208, 196, 0.7);
+    border-radius: 0.6em;
+    color: white;
+    text-shadow:
+        3px 3px 0 rgba(254,156,142,1),
+        -3px 3px 0 rgba(254,156,142,1),
+        3px -3px 0 rgba(254,156,142,1),
+        -3px -3px 0 rgba(254,156,142,1);
+    margin: 0;
+}
+
+/* 背景飾り */
+.characteristics_backgraund_fram {
+  position: absolute;
+  top: 22%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  z-index: -1;
+}
+
+/* フレーム配置 */
+.characteristics_box {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 2rem;
+  gap: 2%;
+}
+
+.character_frame {
+  position: relative;
+  filter: drop-shadow(0 0.2em 0.2em rgba(0,0,0,0.3));
+}
+.character_frame {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* 上のテキストと下のボタンを分ける */
+  position: relative;
+}
+
+/* 左右寄せ */
+.character_frame:first-child {
+  transform: translateX(10%);
+}
+
+.character_frame:last-child {
+  transform: translateX(-10%);
+}
+
+/* フレーム画像 */
+.frame_img {
+  width: 100%;
+  display: block;
+}
+
+/* ケーキ画像 */
+.cake_img {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30%;
+  filter: drop-shadow(0 0.2em 0.2em rgba(0,0,0,0.3));
+
+}
+
+/* テキストエリア */
+.character_text {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+}
+
+.character_text ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* 見出し */
+.character_text h2 {
+  color: rgb(255, 51, 55);
+  font-family: 'Emilys Candy', cursive;
+  font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+}
+
+/* リスト */
+.character_text li {
+  position: relative;
+  padding-left: 5%;
+  margin-bottom: 6%;
+  line-height: 1.8em;
+  color: rgba(70, 58, 50, 1);
+  font-family: "Shippori Mincho", serif;
+  font-size: clamp(0.8rem, 1.5vw, 1.5rem);
+}
+
+/* 小サイズ項目 */
+.character_small_item {
+  font-size: 1.2rem;
+  line-height: 1.7em;
+  display: inline-block;
+  transform: translateY(1px);
+}
+
+/* ================================
+   アイコン（Before）
+================================ */
+
+/* 共通アイコンスタイル */
+.strengths li::before,
+.challenges li::before,
+.approaches li::before {
+  content: "";
+  position: absolute;
+  width: 60%;
+  height: 60%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  filter: brightness(0) saturate(100%) invert(18%)
+          sepia(86%) saturate(7371%) hue-rotate(351deg)
+          brightness(91%) contrast(114%);
+}
+
+/* 個別の位置と画像 */
+.strengths li::before {
+  left: 17%;
+  top: 15%;
+  background-image: url("img/star.svg");
+}
+
+.challenges li::before {
+  left: 15%;
+  top: 25%;
+  background-image: url("img/warning.svg");
+}
+
+.approaches li::before {
+  left: 17%;
+  top: 15%;
+  background-image: url("img/light.svg");
+}
+
+/* 点線 */
+.characteristics_dotline {
+  border-top: 7px dotted #ff4d4d;
+  width: 60%;
+  margin: 1rem auto;
+}
+
+
+
+
+/* ▼ ポップアップ背景 ▼ */
+.popup_overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+/* ▼ ポップアップ本体 ▼ */
+.popup_window {
+  position: relative; /* 子の絶対配置基準 */
+  width: 90%;
+  max-width: 80rem;
+  background-image: url("img/popup_frame.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center top;
+  padding-top: 4rem;
+  padding-bottom: 3rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ▼ PDFカバー ▼ */
+.pdf_cover {
+  width: 60%;        /* 幅を60%に */
+  height: auto;      /* アスペクト比維持 */
+  max-width: 100%;
+  margin-top: 1rem;  /* 正の値で下に移動 */
+  z-index: 2;        /* 背景より前に出す */
+  display: block;
+}
+
+/* ===== ボタン・リンクの下線を完全に消す ===== */
+.character_more_btn,
+.pdf_link,
+.popup_close {
+  text-decoration: none;
+}
+.character_more_btn:hover,
+.pdf_link:hover,
+.popup_close:hover {
+  text-decoration: none;
+}
+
+/* ▼ 閉じるボタン ▼ */
+.popup_close {
+  position: absolute;
+  top: 5rem;
+  right: 10rem;
+  background: rgba(255, 51, 55, 0.8);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.2em 0.5em;
+  font-size: 1.6rem;
+  cursor: pointer;
+  line-height: 1;
+  z-index: 10;
+}
+
+/* ▼ 内容エリア ▼ */
+.popup_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+/* ▼ PDFリンク ▼ */
+.pdf_link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.5em 1em;
+  background: rgba(125, 96, 74, 0.4);
+  color: #fff;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: 0.25s ease;
+  font-family: "Shippori Mincho", serif;
+
+
+}
+.pdf_link:hover {
+  background: rgba(125, 96, 74, 0.65);
+  transform: translateY(-2px);
+
+}
+
+/* ▼ タイトル ▼ */
+.popup_title {
+  font-family: "Shippori Mincho", serif;
+  font-size: clamp(1.5rem, 2vw, 3.5rem);
+  margin-top: 0.5rem;
+  margin-bottom: 1rem; 
+  color: rgba(125, 96, 74, 0.85);
+  line-height: 1.2;
+}
+
+/* ▼ 説明文 ▼ */
+.popup_text {
+  font-family: "Shippori Mincho", serif;
+  font-size: clamp(1rem, 1.2vw, 1.5rem);
+  margin-top: 0.2rem;
+  margin-bottom: 1.5rem;
+  color: rgba(125, 96, 74, 0.85);
+  line-height: 1.4;
+}
+
+/* ▼ 詳しくはこちらボタン ▼ */
+.characteristics_box {
+  position: relative; /* ここを追加：子要素の絶対配置の基準 */
+}
+
+.button_wrapper {
+  position: absolute;
+  bottom: -4rem;
+  right: 6rem;
+  z-index: 10;
+}
+
+.character_more_btn {
+  display: inline-block;
+  padding: 0.7em 1.2em;
+  background: rgba(125,96,74,0.35);
+  border-radius: 20px;
+  font-size: clamp(0.8rem,1.4vw,1rem);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  width: auto;
+  font-family: "Shippori Mincho", serif;
+  transition: 0.25s ease;
+}
+.character_more_btn:hover {
+  background: rgba(125, 96, 74, 0.55);
+  transform: translateY(-2px);
+}
+
+/* ▼ アニメ ▼ */
+@keyframes popupFade {
+  from { opacity: 0; transform: scale(.9); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+
+/* ================================
+   support 全体
+================================ */
+.support_wrapper{
+  position: relative;
+  top: -20vh;            /* 全体をまとめて下に下げる量 */
+}
+#support {
+  text-align: center;
+  padding-top: 20vh;
+  position: relative;
+}
+
+/* タイトル */
+.support_title {
+  display: inline-block;
+  position: relative;
+  font-family: 'Emilys Candy', cursive;
+  font-size: clamp(1rem, 2.5vw, 4rem);
+  padding: 0.2em 0.8em;
+  background-color: rgba(255, 208, 196, 0.7);
+  border-radius: 0.6em;
+  color: white;
+  text-shadow:
+    3px 3px 0 rgba(254,156,142,1),
+    -3px 3px 0 rgba(254,156,142,1),
+    3px -3px 0 rgba(254,156,142,1),
+    -3px -3px 0 rgba(254,156,142,1);
+  margin-top: 7.5rem; /* ← 好きなだけ下がる！ */
+}
+
+/* 背景フレーム（大きいやつ） */
+.support_backgraund_fram {
+  position: absolute;
+  top: 21%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  z-index: -1;
+}
+
+/* 左右の小フレーム（背景装飾） */
+.support_cake_left{
+  position: absolute;
+  top: 50%;
+  width: 25%;
+  left: 10%;
+}
+.support_frame_right {
+  position: absolute;
+  top: 40%;
+  width: 50%;
+  right: 10%;
+  z-index: -1; /* テキストより後ろ */
+  filter: drop-shadow(0 0.2em 0.2em rgba(0,0,0,0.3));
+}
+
+/* テキスト本体（最前面に重ねる） */
+.support_text {
+  position: relative;
+  z-index: 1;
+  width: 60%;
+  margin-left: auto;   /* ← これで右寄せ！ */
+  margin-right: 4%;  /* ← これで左寄せ！ */
+  margin-top:  9%;
+  color: rgba(70, 58, 50, 1);
+  font-family: "Shippori Mincho", serif;
+  font-size: clamp(1rem, 1.5vw, 1.3rem);
+}
+
+/* 見出し */
+.support_text h3 {
+  color: rgb(255, 51, 55);
+  font-family: 'Emilys Candy', cursive;
+  font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+  margin-top: -2%;
+
+}
+
+/* グリッド配置（幅のズレを根本解決） */
+.support_grid {
+   display: grid;
+  grid-template-columns: 45% 50%;
+  gap: 2.5rem;
+  padding: 0 4rem;
+}
+
+/* 点線クロス */
+.support_grid::before,
+.support_grid::after {
+    content: "";
+    position: absolute;
+}
+.support_grid::before { 
+    top: 0; 
+    bottom: 0; 
+    left: 50%; 
+    border-left: 7px 
+    dotted #ff4d4d; 
+}
+.support_grid::after {
+     top: 55%; 
+     left: 15%; 
+     right: 0; 
+     border-top: 7px dotted #ff4d4d; 
+     width: 70%;
+    }
+
+/* 右列（フィードバック & コミュニケーション）のタイトルだけ左寄せ */
+.support_grid > div:nth-child(2) h3{
+    text-align: left;
+margin-left: 4rem;  /* ← 0.3rem〜1remで好みに調整 */}
+
+.support_grid > div:nth-child(4) h3 {
+    text-align: left;
+margin-left: 7rem;  /* ← 0.3rem〜1remで好みに調整 */}
+
+
+/* 右列（2番・4番）のテキスト位置を強制的に中央寄せに近づける */
+.support_grid > div:nth-child(2) {
+    padding-left: 3rem;    /* ← これで絶対左に寄らなくなる */
+}
+
+.support_grid > div:nth-child(4) {
+    position: relative;
+    left: -10%;
+}
+
+/* 共通スタイル */
+.support_text li {
+  list-style: none;
+  position: relative;
+
+  /* ★ テキスト開始位置を固定（ここ動かすとズレる） */
+  padding-left: 2.2em;
+
+  /* 折り返し防止 */
+  white-space: nowrap;     /* ← 折り返しを完全に禁止！！ */
+}
+
+/* 左列の星 */
+.support_text li::before {
+  content: "";
+  position: absolute;
+  width: 1.8rem;
+  height: 1.8em;
+  left: 1em;        /* ← 星の位置はここに固定 */
+
+  background-image: url("img/star.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  filter: brightness(0) saturate(100%) invert(18%)
+          sepia(86%) saturate(7371%) hue-rotate(351deg)
+          brightness(91%) contrast(114%);
+}
+
+/* 右列だけ星を少しだけ調整 */
+.skill_grid > *:nth-child(2) li::before,
+.skill_grid > *:nth-child(4) li::before {
+  left: -1em;   /* ← 微調整はここだけ */
+}
+
+/* Support セクション専用 label / value / row */
+#support .row {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 0.6rem;
+}
+
+#support .label {
+    width: 130px;        /* ラベルの幅を固定 */
+    font-weight: bold;
+    white-space: nowrap;
+    text-align: left;
+    position: relative;  /* ← 疑似要素の配置に必須 */
+    padding-right: 1.2rem; /* ：の分スペースを確保 */
+}
+
+/* ★ ここで「：」の位置を揃える ★ */
+#support .label::after {
+    content: "：";
+    position: absolute;
+    right: 0;  /* ラベルの右端に固定配置 */
+    top: 0;
+}
+
+#support .value {
+    flex: 1;
+    padding-left: 0.3rem; /* コロンの後ろの余白、好みで調整OK */
+}
+
+
+/* ================================
+   Creation 全体
+================================ */
+#creation {
+    text-align: center;
+    padding-top: 20vh;
+    position: relative;
+}
+
+.creation_title {
+    display: inline-block;
+    position: relative;   /* ← これを追加！ */
+    font-family: 'Emilys Candy', cursive;
+    font-size: clamp(1rem, 2.5vw, 4rem);
+    padding: 0.2em 0.8em;
+    background-color: rgba(255, 208, 196, 0.7);
+    border-radius: 0.6em;
+    color: white;
+    text-shadow:
+        3px 3px 0 rgba(254,156,142,1),
+        -3px 3px 0 rgba(254,156,142,1),
+        3px -3px 0 rgba(254,156,142,1),
+        -3px -3px 0 rgba(254,156,142,1);
+    top: 4.5rem; /* ← 好きなだけ下がる！ */
+}
+
+.creation_box {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 背景・フレーム・いちご */
+.creation_backgraund_fram,
+.creation_fram,
+.creation_strawberry {
+    position: absolute;
+    top: 53%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.creation_backgraund_fram { width: 100%; z-index: -1; }
+.creation_fram { width: 55%; z-index: 1; }
+.creation_strawberry { width: 85%; z-index: 0; }
+
+/* ================================
+   スライドショー
+================================ */
+.slideshow-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 38%;
+    z-index: 3;
+    overflow: visible;
+}
+
+.slide { display: none; }
+.slide img {
+    width: 100%;
+    border-radius: 12px;
+}
+.fade { animation: fadeEffect 1s; }
+@keyframes fadeEffect { from { opacity: 0.4 } to { opacity: 1 } }
+
+.dots {
+    text-align: center;
+    position: absolute;
+    bottom: -1vh;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+.dot {
+    width: 0.7rem;
+    height: 0.7rem;
+    margin: 0 0.4rem;
+    background-color: white;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+.active-dot { background-color: #ff8286; }
+
+/* ================================
+   ポップアップ
+================================ */
+.popup_overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup_window {
+    position: relative;
+    width: 90%;
+    max-width: 80rem;
+    background-image: url("img/popup_frame.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center top;
+    padding-top: 6rem;  /* 写真を下げる */
+    padding-bottom: 3rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ポップアップ内の写真 */
+.creation_popup_image {
+    width: 60%;
+    height: auto;
+    max-width: 100%;
+    margin-top: 1rem;  /* 下方向に配置 */
+    z-index: 2;
+    display: block;
+}
+
+/* 文字 */
+.creation_popup_text {
+    margin-top: -2rem;
+    font-family: 'Shippori Mincho', serif;
+  color: rgba(70, 58, 50, 1);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: left;
+    max-width: 75%;
+}
+
+/* 閉じるボタン */
+.popup_close {
+    position: absolute;
+    top: 5rem;
+    right: 10rem;
+    background: rgba(255, 51, 55, 0.8);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.2em 0.5em;
+    font-size: 1.6rem;
+    cursor: pointer;
+    line-height: 1;
+    z-index: 10;
+}
+
+/* 詳しく見るボタン */
+.creation_popup_link {
+    display: inline-block;
+    margin-top: -1rem;  /* 文字との間隔を調整 */
+    padding: 0.6rem 1.2rem;
+    background: rgba(125, 96, 74, 0.35);
+    backdrop-filter: blur(3px);
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Shippori Mincho', serif;
+    border-radius: 20px;
+    font-size: clamp(0.8rem, 1.4vw, 1rem);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    transition: 0.25s ease;
+    white-space: nowrap;
+    z-index: 10;
+}
+.creation_popup_link:hover {
+    background: rgba(125, 96, 74, 0.55);
+    transform: translateY(-2px);
+}
+
+.creation_popup_trigger {
+  cursor: pointer;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  animation: softPulse 3.5s ease-in-out infinite;
+}
+
+.creation_popup_trigger:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+
+/* ================================
+   vision 全体
+================================ */
+#vision{
+    text-align: center;
+    padding-top: 20vh;
+    position: relative;
+}
+
+.vision_box {
+    position: relative;
+    width: 100%;
+    height: 110vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* タイトル */
+.vision_title {
+    display: inline-block;
+    position: relative;   /* ← これを追加！ */
+    font-family: 'Emilys Candy', cursive;
+    font-size: clamp(1rem, 2.5vw, 4rem);
+    padding: 0.2em 0.8em;
+    background-color: rgba(255, 208, 196, 0.7);
+    border-radius: 0.6em;
+    color: white;
+    text-shadow:
+        3px 3px 0 rgba(254,156,142,1),
+        -3px 3px 0 rgba(254,156,142,1),
+        3px -3px 0 rgba(254,156,142,1),
+        -3px -3px 0 rgba(254,156,142,1);
+    top: 4rem; /* ← 好きなだけ下がる！ */
+}
+
+
+/* ================================
+   背景フレーム（これが消えてたやつ）
+================================ */
+.vision_background_frame {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+
+/* ================================
+   2つのフレームを横並び
+================================ */
+.vision_box {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: -5rem;
+  width: 100%;
+  left: 0;
+}
+
+.vision_item {
+  position: relative;
+  width: 46%;      /* ← 47% → 46% にするとさらに寄る！ */
+  min-height: 1100px;
+  z-index: 5;
+  padding: 0;      /* ← 念のため内側の余白もゼロに */
+  margin: 0;       /* ← 外側の余白もゼロに */
+}
+
+.vision_frame {
+  position: absolute;
+  left: 50%;
+  top: -15%;
+  transform: translateX(-50%);
+  width: 120%;      /* ← 115% → 108% にして干渉減らす */
+  display: block;
+  z-index: 6;
+    filter: drop-shadow(0 0.2em 0.2em rgba(0,0,0,0.3));
+}
+
+.vision_text h2{
+  text-align: center;
+  color: rgb(255, 51, 55);
+}
+/* レース枠の上に文字をのせる */
+.vision_text {
+  position: absolute;
+  top: 10%;
+  left: 20%;
+  width: 70%;
+  text-align: left;
+  line-height: 2.4;
+  font-size: 1.3rem;
+  color: rgba(70, 58, 50, 1);
+  font-family: 'Shippori Mincho', serif;
+  z-index: 10;   
+  /* ← 最前面 */
+}
+
+.vision_text .center {
+  text-align: center;
+}
+
+/* ===== 細かいパーツは z-index そのままでOK ===== */
+
+.future_text{
+  position: absolute;
+  top: 10%;
+  left: 20%;
+  width: 70%;
+  text-align: left;
+  line-height: 2.4;
+  font-size: 1rem;
+  color: rgba(70, 58, 50, 1);
+  font-family: 'Shippori Mincho', serif;
+  z-index: 10;   
+  /* ← 最前面 */
+
+}
+
+.future_block {
+  margin-bottom: 2.5rem;
+  display: block;
+  margin: 0 auto;
+}
+
+.future_block h3 {
+  color: rgb(255, 51, 55);
+  font-family: 'Shippori Mincho', serif;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.future_rows {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.future_rows ul {
+  width: 50%;
+  padding-left: 1rem;
+}
+
+.future_rows li {
+  list-style: none;
+  padding-left: 1.5rem;
+  margin-bottom: .4rem;
+  line-height: 1.6;
+  color: rgba(70, 58, 50, 1);
+  position: relative;
+}
+
+.vision_dotline{
+  border-top: 7px dotted #ff4d4d;
+  width: 100%;
+  margin: 1rem auto;
+}
+
+/* 真ん中の点線 */
+.future_rows::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  border-left: 7px dotted #ff4d4d;
+  transform: translateX(-50%);
+}
+
+/* 星アイコン */
+.future_rows li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.2rem;
+  width: 1rem;
+  height: 1rem;
+  background-image: url("img/star.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  filter: brightness(0) saturate(100%) invert(18%)
+          sepia(86%) saturate(7371%) hue-rotate(351deg)
+          brightness(91%) contrast(114%);
+}
+
+
+/* ================================
+   contact（ヘッダー）
+================================ */
+#contact {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  overflow: hidden;
+  text-align: center;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+/* タイトル */
+.contact_title {
+  display: inline-block;
+  font-family: 'Emilys Candy', cursive;
+  font-size: clamp(1rem, 2.5vw, 4rem);
+  padding: 0.2em 0.8em;
+  background-color: rgba(255, 208, 196, 0.7);
+  border-radius: 0.6em;
+  color: white;
+  text-shadow:
+    3px 3px 0 rgba(254,156,142,1),
+    -3px 3px 0 rgba(254,156,142,1),
+    3px -3px 0 rgba(254,156,142,1),
+    -3px -3px 0 rgba(254,156,142,1);
+  z-index: 10;
+  position: relative;
+  top: 50%;
+}
+
+.header {
+  position: relative; /* ←これが超重要 */
+}
+
+.contact_lace {
+  position: absolute;
+  top: -150%; /* ヘッダー基準 */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+
+/* 中身 */
+.contact_box {
+  position: absolute;
+  top: 150%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-family: 'Shippori Mincho', serif;
+  z-index: 3;
+  color: rgba(70, 58, 50, 1);
+  font-size: clamp(1rem, 2vw, 2rem);
+}
+
+/* ===== mailリンク専用 ===== */
+.contact_box p a {
+  display: inline-block;
+  padding: 0.4em 1em;
+  color: rgb(255, 51, 55);
+  text-decoration: none;
+  margin-bottom: 1rem;
+  margin-top: 4rem;
+  top: rem;
+}
+
+
+.contact_more_btn {
+  position: relative;   /* 追加 */
+  top: -2rem;        /* 上に移動 */
+  padding: 0.7em 1.8em;
+  background: rgba(125, 96, 74, 0.35);
+  backdrop-filter: blur(3px);
+  border-radius: 20px;
+  font-size: clamp(0.8rem, 1.4vw, 1rem);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: 0.25s ease;
+  white-space: nowrap;
+  min-width: max-content;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.contact_more_btn:hover {
+  background: rgba(125, 96, 74, 0.55);
+  transform: translateY(-2px);
+}
+
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: 6rem;
+}
+
+
+
+#backToTop {
+  position: fixed;  /* 画面に固定 */
+  bottom: 2rem;     /* 下から2rem */
+  right: 2rem;      /* 右から2rem */
+  width: 3rem;
+  height: 3rem;
+  background-color: rgba(255, 208, 196, 0.7);
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+  line-height: 3rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;    /* 初期は非表示 */
+  z-index: 15;    /* どの要素よりも前面に */
+  box-shadow: 0 0.2em 0.5em rgba(0,0,0,0.3);
+  user-select: none;
+  transition: 0.25s ease;
+}
+
+#backToTop:hover {
+  background-color: #ff0000;
+  transform: translateY(-3px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ================================
+   ノートPC（1400px以下）
+================================ */
+@media (max-width: 1400px) {
+
+  /* 全体：縦がきつくなる対策 */
+  section {
+    padding-top: 15vh;
+  }
+
+  /* TOP */
+  #top {
+    height: 90vh;
+  }
+
+  .heart_frame {
+  width: 50%;
+  height: auto;
+  margin-top: -20%;
+  }
+
+  .top_title {
+    transform: translate(-50%, -80%);
+  top: 45%;
+  }
+
+  .top_cake {
+    width: 10%;
+    top: 63%;
+  }
+  /* ---　装飾リボン --- */
+.red_ribon{
+    top: 45%;
+}
+
+
+  .menu_list {
+  margin-top: -5%;         /* 上への位置調整 */
+}
+
+  /* ================================
+   Profile 全体
+================================ */
+  .profile_box {
+    margin-left: 11%;
+    gap: 6%;
+    margin-top: -3%;
+  }   
+
+.profile_title {
+  position: relative; /* or 消してもOK */
+  top: 0;              /* ← これ超重要 */
+  scroll-margin-top: 20rem;
+}
+
+
+
+  .profile_text {
+    top: 18%;
+    font-size: clamp(0.8rem, 2vw, 1.4rem);
+    gap: 3rem;
+    left: 5%;
+  }
+
+  .profile_message {
+    top: 68%;
+    font-size: clamp(0.8rem, 1.8vw, 1.4rem);
+    left: 18%;
+  }
+
+  .profile_backgraund_fram {
+  top: -20%;
+  left: 43%;
+  width: 110%;
+}
+
+  /* 左：フレーム */
+  .profile_frame {
+  left: -10%;
+}
+
+
+
+
+  /* ================================
+   Skill & License 全体
+================================ */
+  .skill_license_box {
+    margin-top: 8rem;
+}
+
+.skill_licensee_title {
+    top: 11rem;
+}
+
+  .license_frame { width: 37%; }
+  .skill_fram { width: 42%; }
+
+  .license_text,
+  .skill_text {
+    font-size: 1rem;
+    line-height: 2rem;
+  }
+
+  .license_text ul li {
+  margin-top: 0.4rem; /* 好みで 0.2〜0.6rem */
+  margin-left: -1rem;
+}
+
+  /* ================================
+   リスト（星アイコン）
+================================ */
+
+
+
+/* 個別サイズ調整 */
+.license_text li::before {
+     left: 7rem; 
+     top: 0.6rem; 
+     width: 1rem; 
+     height: 1rem; 
+     background-size: cover; 
+    }
+.skill_text li::before {
+     left: -1.6rem; 
+     top: 0.4rem; 
+     width: 1rem; 
+     height: 1rem; 
+     background-size: contain; 
+    }
+
+/* 小さい項目用 */
+.small_item {
+     font-size: 1.2rem; 
+     line-height: 1.7em;
+      display: inline-block; 
+      transform: translateY(1px); 
+    }
+
+
+  /* ================================
+   四分割グリッド
+================================ */
+
+.skill_grid::before { 
+    top: 0; 
+    bottom: 0; 
+    left: 50%; 
+}
+.skill_grid::after {
+width: 90%; 
+left: 7%;
+top: 45%;
+    }
+
+/* セクションタイトル */
+.skill_grid h3 {
+     font-size: 1.2rem; 
+    }
+
+/* 線装飾 */
+.license_dotline {
+  margin-left: 7%;
+  margin-top: 10%;
+    }
+
+/* 小さい項目用 */
+.small_item {
+     font-size: 1rem; 
+    }
+
+
+
+  /* ================================
+   characteristics 全体
+================================ */
+
+.characteristics_wrapper{
+  top: 15vh;        
+}
+
+/* タイトル */
+.characteristics_title {
+    top: 11.5rem;
+}
+
+/* 背景飾り */
+.characteristics_backgraund_fram {
+  top: 40%;
+}
+
+/* ケーキ画像 */
+.cake_img {
+  top: 13%;
+  width: 25%;
+}
+
+
+/* 見出し */
+.character_text h2 {
+  font-size: clamp(1.5rem, 2vw, 2rem);
+}
+
+/* リスト */
+.character_text li {
+  font-size: clamp(0.8rem, 1.2vw, 1.2rem);
+}
+
+/* 小サイズ項目 */
+.character_small_item {
+  font-size: 1rem;
+}
+
+/* ================================
+   アイコン（Before）
+================================ */
+
+/* 共通アイコンスタイル */
+.strengths li::before,
+.challenges li::before,
+.approaches li::before {
+  top: 30%;
+  left: 15%;
+}
+
+
+/* ▼ 閉じるボタン ▼ */
+.popup_close {
+  margin-right: -8rem;
+}
+
+/* ▼ タイトル ▼ */
+.popup_title {
+  font-size: clamp(0.5rem, 1.7vw, 1.7rem);
+}
+
+/* ▼ 説明文 ▼ */
+.popup_text {
+  font-size: clamp(0.5rem, 1vw, 1rem);
+  margin-top: -1%;
+}
+
+/* ▼ 詳しくはこちらボタン ▼ */
+
+.button_wrapper {
+  bottom: -0.5rem;
+  right: 5rem;
+}
+
+.character_frame {
+  position: relative; /* or absolute どちらでもOK */
+  top: -3rem;         /* ← 好きな量に調整 */
+}
+
+
+  /* ================================
+   support 全体
+================================ */
+
+.support_wrapper{
+  position: relative;
+  margin-top: 10rem;            /* 全体をまとめて下に下げる量 */
+}
+
+/* タイトル */
+.support_title {
+  margin-top:20rem; 
+}
+
+/* 背景フレーム（大きいやつ） */
+.support_backgraund_fram {
+  top: 42%;
+}
+
+/* 左右の小フレーム（背景装飾） */
+.support_cake_left{
+  top: 60%;
+}
+
+.support_frame_right {
+  top: 53%;
+  width: 53%;
+  right: 6%;
+}
+
+/* テキスト本体（最前面に重ねる） */
+.support_text {
+  margin-top:  6%;
+  right: -1%;
+}
+
+/* 見出し */
+.support_text h3 {
+  margin-top: -2%;
+}
+
+/* グリッド配置（幅のズレを根本解決） */
+.support_grid {
+  gap: 2rem;
+}
+
+/* 点線横クロス */
+.support_grid::after {
+     left: 13%; 
+     width: 77%;
+    }
+
+ /* 星 */
+.support_text li::before {
+  width: 1rem;
+  height: 1em;
+  left: 1em;    
+  top: 0.5rem;
+    }    /* ← 星の位置はここに固定 */
+
+
+  /* ================================
+   creation 全体
+================================ */
+
+.creation_title {
+    top: 10rem; 
+}
+
+.creation_box {
+    margin-top: 1rem;
+}
+
+
+/* ================================
+   ポップアップ
+================================ */
+/* ポップアップ内の写真 */
+.creation_backgraund_fram{
+  top: 50%;
+}
+
+.creation_box {
+  position: relative;
+  top: -5rem; /* ← 好きな量に調整（上に） */
+}
+
+  
+  /* ================================
+   vision 全体
+================================ */
+
+.vision_box {
+  top: -2rem;
+}
+
+.vision_title {
+    top: 3rem; /* ← 好きなだけ下がる！ */
+}
+
+.vision_background_frame {
+    top: 15%;
+}
+
+
+.vision_item {
+  position: relative;
+  width: 46%;      /* ← 47% → 46% にするとさらに寄る！ */
+  min-height: 1100px;
+  z-index: 5;
+  padding: 0;      /* ← 念のため内側の余白もゼロに */
+  margin: 0;       /* ← 外側の余白もゼロに */
+}
+
+
+.vision_text h2{
+  text-align: center;
+  color: rgb(255, 51, 55);
+  font-size: 1.3rem;
+
+}
+/* レース枠の上に文字をのせる */
+.vision_text {
+  position: absolute;
+  top: 5%;
+  left: 20%;
+  width: 70%;
+  text-align: left;
+  line-height: 2.4;
+  font-size: 01rem;
+}
+
+
+/* ===== 細かいパーツは z-index そのままでOK ===== */
+
+.future_text{
+  top: 3%;
+  font-size: 0.7rem;
+}
+
+.future_block h3 {
+  margin-top: 1rem;
+}
+
+
+/* ===== mailリンク専用 ===== */
+#contact {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  overflow: hidden;
+  text-align: center;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+
+/* レース */
+.contact_lace {
+  top: -100%;
+}
+
+.contact_title{
+  margin-top: 3%;
+}
+}
+
+#backToTop {
+  position: fixed;
+  z-index: 99999;
+  pointer-events: auto;
+}
+
+/* ================================
+   ノートPC（1366px以下）
+================================ */
+@media (max-width: 1366px) {
+
+  .characteristics_wrapper{
+  top: 20vh;        
+}
+.creation_title {
+    top: 6em; 
+}
+
+.dots {
+    bottom: 6vh;
+}
+.vision_box {
+  top: 3rem;
+}
+}
+
+/* ================================
+  ノートpc（1028px以下）
+================================ */
+
+@media (max-width: 1280px) {
+
+.skill_text{
+  top: -1%;
+}
+
+.character_small_item{
+  font-size: 0.9rem;
+}
+
+#support{
+  padding-bottom: 5rem;
+}
+.support_text{
+  left: 0.5%;
+  margin-top: 2rem
+}
+.support_title{
+  margin-top: 25rem;
+}
+
+#creation{
+  padding-top: 15rem;
+}
+
+.creation_title{
+  top: 4rem;
+}
+.dots{
+  bottom: 4vh;
+}
+
+#vision{
+  padding-top: 15rem;
+}
+
+.vision_background_frame{
+  top: 20%;
+}
+.vision_box{
+  top: 10rem;
+}
+
+.vision_text{
+  font-size: 0.9rem;
+}
+
+.future_text h3{
+  font-size: 0.9rem;
+}
+
+.contact_lace{
+  top: -90%;
+}
+
+
+}
+
+
+/* ================================
+  ノートpc（1180px以下）
+================================ */
+
+@media (max-width: 1180px) {
+.character_small_item{
+  font-size: 0.7rem;
+}
+
+.skill_text{
+  font-size: clamp(0.3rem, 1vw, 2rem);
+  top: -2%;
+  right: 7.5%;
+}
+.license_text h2,
+.license_text h3 {
+  font-size: clamp(0.3rem, 2vw, 4rem);
+}
+
+.skill_title{
+  font-size: clamp(0.3rem, 2vw, 4rem);
+}
+
+.small_item{
+  font-size: clamp(0.3rem, 1vw, 2rem);
+}
+
+/* Skills：右上・右下の星を左に寄せる */
+/* 右上（2番目のブロック） */
+.skill_grid > div:nth-child(2) ul li::before,
+.skill_grid > div:nth-child(4) ul li::before {
+    left: -1.9rem; /* 左に寄せる */
+}
+
+.support_text{
+   font-size: clamp(0.3rem, 1.2vw, 2rem);
+}
+
+.vision_text{
+  top: -1%;
+}
+.future_text{
+  top: -1%;
+}
+
+.contact_lace{
+  top: -50%;
+}
+
+.contact_box{
+ margin-top: 5%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ================================
+   タブレット横（1024px以下）
+================================ */
+@media (max-width: 1030px) {
+  /* 全体：縦がきつくなる対策 */
+  section {
+    padding-top: 15vh;
+  }
+
+  /* TOP */
+  #top {
+    height: 90vh;
+  }
+
+  .heart_frame {
+  width: 50%;
+  height: auto;
+  margin-top: -20%;
+  }
+
+  .top_title {
+    transform: translate(-50%, -80%);
+    top: 45%;
+  }
+
+  .top_cake {
+    width: 10%;
+    top: 65%;
+  }
+
+  .menu_list {
+  margin-top: -5%;         /* 上への位置調整 */
+}
+
+  /* ================================
+   Profile 全体
+================================ */
+  .profile_box {
+    margin-top: -20%;
+  }   
+
+  .profile_title{
+    top: -8rem;
+  }
+  .profile_text {
+    top: 18%;
+    font-size: clamp(0.8rem, 1.7vw, 1.4rem);
+    gap: 2rem;
+    left: 2%;
+  }
+
+
+  .profile_backgraund_fram {
+  top: -15%;
+  left: 43%;
+  width: 110%;
+
+
+}
+
+  /* ================================
+   Skill & License 全体
+================================ */
+  .skill_license_box {
+    margin-top: 5rem;
+}
+
+.skill_licensee_title {
+    top: 6.5rem;
+}
+
+  .license_text {
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    left: 2%;
+    top: 2%;
+  }
+    .skill_text {
+      font-size: 0.8rem;
+      line-height: 1rem;
+      width: 40%;
+      left: 49%;
+      top: 2%;
+
+    }
+
+/* テキストタイトル */
+.license_text h2,
+.license_text h3 { 
+  position: relative;
+  left: 8%;
+}
+
+
+.skill_text h2,
+.license_text h2,
+.license_text h3 { 
+  font-size: 2rem;
+ }
+
+ /* 個別サイズ調整 */
+.license_text li {
+     margin-left: -5rem; 
+     top: 0.6rem; 
+    }
+
+
+.skill_text h3 {
+  margin-top: 2rem;
+}
+
+.skill_text li {
+     margin-left: 1rem; 
+     top: 1rem; 
+}
+
+
+/* 個別サイズ調整 */
+.license_text li::before {
+     margin-left: 1rem; 
+     top: 0rem; 
+      width: 1.5rem; 
+     height: 1.5rem; 
+
+    }
+
+    /* 左列 li の星だけ右にずらす */
+.skill_grid > div:nth-child(1) li::before,
+.skill_grid > div:nth-child(3) li::before {
+    margin-left: 0.2rem;  /* ← 元の -1rem より右に */
+    top: 0rem;          /* 必要に応じて微調整 */
+}
+
+.skill_text li::before {
+     margin-left: -1rem; 
+     top: 0rem; 
+     width: 1.5rem;
+     
+    }
+
+/* 小さい項目用 */
+.small_item {
+     font-size: 0.7rem; 
+     line-height: 1.7em;
+    }
+
+/* ================================
+   四分割グリッド
+================================ */
+
+.skill_grid::before { 
+    top: 10%; 
+    bottom: 0; 
+    left: 50%; 
+}
+.skill_grid::after {
+width: 90%; 
+left: 7%;
+top: 55%;
+    }
+
+/* セクションタイトル */
+.skill_grid h3 {
+     font-size: 1.2rem; 
+    }
+
+/* 線装飾 */
+.license_dotline {
+  margin-left: 17%;
+  margin-top: 10%;
+    }
+
+  /* ================================
+   characteristics 全体
+================================ */
+
+.characteristics_wrapper{
+  top: 6rem;        
+}
+
+/* タイトル */
+.characteristics_title {
+    top: 7rem;
+}
+
+/* 背景飾り */
+.characteristics_backgraund_fram {
+  top: 35%;
+}
+
+/* 見出し */
+.character_text h2 {
+  font-size: clamp(1.5rem, 2vw, 2rem);
+}
+
+/* リスト */
+.character_text li {
+  font-size: clamp(0.8rem, 1.2vw, 1.2rem);
+}
+.character_small_item {
+  font-size: 0.7rem;
+}
+
+  /* ================================
+   support 全体
+================================ */
+
+  .support_box {
+    margin-top: 5rem;
+}
+
+/* タイトル */
+.support_title {
+  margin-top: 13rem; 
+}
+
+/* 背景フレーム（大きいやつ） */
+.support_backgraund_fram {
+  top: 40%;
+}
+
+/* 左右の小フレーム（背景装飾） */
+.support_cake_left{
+  top: 60%;
+}
+
+.support_frame_right {
+  top: 52%;
+  width: 53%;
+  right: 6%;
+}
+
+/* テキスト本体（最前面に重ねる） */
+.support_text {
+  margin-top:  -3%;
+  right: -3%;
+  width: 72%;
+  font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+}
+
+/* 左上・左下だけ少し右に寄せる */
+.support_grid > div:nth-child(1),
+.support_grid > div:nth-child(3) {
+  padding-left: 4rem; 
+}
+
+/* グリッド配置（幅のズレを根本解決） */
+.support_grid {
+  gap: 2rem;
+  top: 40%;
+}
+
+
+.support_grid::before { 
+    left: 54%; 
+}
+
+/* 点線横クロス */
+.support_grid::after {
+     left: 23%; 
+     width: 65%;
+    }
+
+/* 左列の見出しだけ位置調整 */
+.support_grid > div:nth-child(1) h3,
+.support_grid > div:nth-child(3) h3 {
+  margin-left: 2rem;  /* ← 1〜3remで微調整 */
+}
+
+    
+ /* 星 */
+.support_text li::before {
+  margin-left: 1em;    
+  top: 0.3rem;
+    }    
+
+    /* 左列（左上・左下）だけ星を微調整 */
+.support_grid > div:nth-child(1) li::before,
+.support_grid > div:nth-child(3) li::before {
+  margin-left: 0em;   /* ← 1.5〜2.5emで調整 */
+}
+
+  /* ================================
+   creation 全体
+================================ */
+
+.creation_title {
+    top: 10.5rem; 
+}
+
+.creation_box {
+    margin-top: 3.5rem;
+}
+
+
+
+.dots {
+bottom: 8%;
+}
+
+  
+  
+  /* ================================
+   vision 全体
+================================ */
+#vision {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.vision_box {
+  margin-top: -5rem;
+}
+
+.vision_title { 
+    top: 5rem; 
+}
+
+.vision_background_frame {
+    top: 21%;
+}
+
+.vision_frame {
+  top: -10%;
+}
+
+
+
+.vision_text h2{
+  font-size: 1.5rem;
+margin-top: -5%;
+}
+/* レース枠の上に文字をのせる */
+.vision_text {
+  position: absolute;
+  top: 5%;
+  left: 20%;
+  width: 70%;
+  text-align: left;
+  line-height: 2.4;
+    font-size: 0.75rem;
+
+}
+
+
+
+.future_text{
+  top: 4%;
+  left: 15%;
+  width: 80%;
+  font-size: 0.5rem;
+
+}
+
+
+.future_block h3 {
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+
+.vision_dotline{
+  border-top: 7px dotted #ff4d4d;
+  width: 100%;
+  margin: 1rem auto;
+}
+
+/* 真ん中の点線 */
+.future_rows::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  border-left: 7px dotted #ff4d4d;
+  transform: translateX(-50%);
+}
+
+/* 星アイコン */
+.future_rows li::before {
+  left: 0;
+  top: 0.2rem;
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+
+#vision .future_rows {
+  display: flex;
+  justify-content: flex-start; /* ← これに変更 */
+  gap: 2rem;                   /* ← 好きな間隔にする */
+}
+
+
+
+  /* ================================
+   contact 全体
+================================ */
+
+/* ===== mailリンク専用 ===== */
+#contact {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  text-align: center;
+  padding-top: 0;
+  margin-top: 0;
+
+  padding-bottom: 13rem;
+  margin-bottom: 0;
+  height: auto;
+  min-height: 0s;
+}
+
+
+
+.contact_lace img {
+  display: block;
+}
+
+/* レース */
+.contact_lace {
+  top: -200%;
+    padding-bottom: 0;
+  margin-bottom: 0;
+
+}
+
+.contact_title {
+  position: relative;
+  top: 7rem;  /* ← 見た目だけ動く */
+}
+
+
+.contact_box{
+  margin-top: -4%;
+      padding-bottom: 0;
+  margin-bottom: 0;
+
+}
+
+.contact_more_btn{
+  top: -2rem;
+}
+
+}
+
+
+  /* ================================
+   タブレット縦（768px以下）
+================================ */
+/* タブレット縦 */
+@media (max-width: 768px) {
+
+
+  /* TOP */
+  #top {
+    height: 90vh;
+  }
+
+  .heart_frame {
+  width: 50%;
+  height: auto;
+  margin-top: -40%;
+  }
+
+  .top_title {
+    transform: translate(-50%, -80%);
+    top: 44%;
+  }
+
+  .top_cake {
+    width: 10%;
+    top: 55%;
+  }
+
+  .menu_list {
+  margin-top: -5%;         /* 上への位置調整 */
+}
+
+  /* ================================
+   Profile 全体
+================================ */
+  .profile_box {
+    margin-top: -38%;
+  }   
+
+  .profile_title{
+    top: -17rem;
+  }
+  .profile_text {
+    top: 18%;
+    font-size: clamp(0.8rem, 1.7vw, 1.4rem);
+    gap: 2rem;
+    left: -2%;
+  }
+
+
+  .profile_backgraund_fram {
+  top: -22%;
+  left: 43%;
+  width: 110%;
+
+
+}
+
+/* ================================
+   Skill & License 全体
+================================ */
+
+.skill_license_box {
+  margin-top: -4rem;
+}
+
+.skill_licensee_title {
+  top: -2rem;
+}
+
+.license_text {
+  font-size: 0.7rem;
+  line-height: 1.3rem;
+  left: 4%;
+  top: 2%;
+}
+
+.skill_text {
+  font-size: 0.6rem;
+  line-height: 0.5rem;
+  width: 40%;
+  left: 49%;
+  top: 2%;
+}
+
+/* Skill / License 内の ul の余白をリセット */
+.skill_text ul,
+.license_text ul {
+  margin: 0;
+  padding: 0;
+}
+
+
+/* ================================
+   テキストタイトル
+================================ */
+
+.skill_text h2,
+.license_text h2,
+.license_text h3 {
+  font-size: 1.3rem;
+}
+
+/* ================================
+   li 個別調整
+================================ */
+
+.license_text li {
+  margin-left: -5rem;
+  top: 0rem;
+}
+
+.skill_text li {
+  margin-left: -0.5rem;
+  top: 1rem;
+  height: 1rem;
+}
+
+/* 星（License） */
+.license_text li::before {
+  margin-left: 2rem;
+  top: 0.3rem;
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+/* 左列の li の文字だけ */
+.skill_grid > div:nth-child(1) li,
+.skill_grid > div:nth-child(3) li {
+  padding-left: 1rem;
+}
+
+/* 左列 li の星だけ右にずらす */
+.skill_grid > div:nth-child(1) li::before,
+.skill_grid > div:nth-child(3) li::before {
+  margin-left: 1.3rem;
+  top: 0rem;
+}
+
+/* 星（Skill 共通） */
+.skill_text li::before {
+  margin-left: -0.5rem;
+  top: 0rem;
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+/* ================================
+   小さい項目
+================================ */
+
+.small_item {
+  font-size: 0.5rem;
+  line-height: 1.7em;
+}
+
+/* ================================
+   四分割グリッド
+================================ */
+
+.skill_grid::before {
+  top: 20%;
+  left: 50%;
+  width: 90%;
+  height: 90%;
+}
+
+.skill_grid::after {
+  top: 53%;
+  width: 90%;
+  left: 4%;
+}
+
+/* セクションタイトル */
+.skill_grid h3 {
+  font-size: 0.7rem;
+  margin-left: -2rem;          /* ← 上下左右の余白を全部消す */
+  padding: 0;
+}
+
+/* ================================
+   線装飾
+================================ */
+
+.license_dotline {
+  margin-left: 10%;
+  margin-top: 5%;
+}
+
+  /* ================================
+   characteristics 全体
+================================ */
+
+.characteristics_wrapper{
+  top: -4rem;        
+}
+
+/* タイトル */
+.characteristics_title {
+    top: -2rem;
+}
+
+/* 背景飾り */
+.characteristics_backgraund_fram {
+  top: 25%;
+}
+
+/* 見出し */
+.character_text h2 {
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
+  margin-top: 10%;
+}
+
+/* リスト */
+.character_text li {
+  font-size: clamp(0.5rem, 1.2vw, 1.2rem);
+}
+
+.character_small_item {
+  font-size: 0.5rem;
+}
+
+
+
+
+/* ▼ PDFカバー ▼ */
+.pdf_cover {
+  margin-top: -2rem;  /* 正の値で下に移動 */
+}
+
+
+/* ▼ 閉じるボタン ▼ */
+.popup_close {
+  top: 5rem;
+  right: 15rem;
+  font-size: 1rem;
+}
+
+
+/* ▼ PDFリンク ▼ */
+.pdf_link {
+  padding: 0.3em 0.5em;
+  font-size: 0.5;
+}
+
+/* ▼ タイトル ▼ */
+.popup_title {
+  font-family: "Shippori Mincho", serif;
+  font-size: 1;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem; 
+  color: rgba(125, 96, 74, 0.85);
+  line-height: 1.2;
+}
+
+/* ▼ 説明文 ▼ */
+.popup_text {
+  font-size: 0.4;
+  margin-top: -0.5rem;
+}
+
+
+.button_wrapper {
+  bottom: -2rem;
+  right: 3rem;
+}
+
+
+
+/* ================================
+   support 全体
+================================ */
+.support_box {
+  margin-top: -40rem;
+}
+
+/* タイトル */
+.support_title {
+  top: -18rem; 
+}
+
+/* 背景フレーム（大きいやつ） */
+.support_backgraund_fram {
+  top:20%;
+}
+
+/* 左右の小フレーム（背景装飾） */
+.support_cake_left {
+  top: 50%;
+}
+
+.support_frame_right {
+  top: 35%;
+  width: 53%;
+  right: 6%;
+}
+
+/* テキスト本体（最前面に重ねる） */
+.support_text {
+  margin-top: 55%;
+  right: -10%;
+  width: 90%;
+  font-size: clamp(0.7rem, 0.9vw, 0.9rem);
+}
+
+/* Support セクション専用 label / value / row */
+
+#support .label {
+    width: 100px;       /* ラベル幅を少し狭く */
+    font-weight: bold;
+    white-space: nowrap;
+    text-align: left;
+    position: relative;
+    padding-right: 0.1rem; /* コロンとの隙間を狭く */
+}
+
+.support_grid h3{
+  height: 10%;
+    font-size: 1rem;
+
+}
+
+/* 左上・左下だけ少し右に寄せる */
+.support_grid > div:nth-child(1),
+.support_grid > div:nth-child(3) {
+  padding-left: 7rem; 
+}
+
+/* グリッド配置（幅のズレを根本解決） */
+.support_grid {
+  gap: 2rem;
+  top: 40%;
+}
+
+
+.support_grid::before { 
+    left: 55%; 
+}
+
+/* 点線横クロス */
+.support_grid::after {
+     left: 23%; 
+     width: 65%;
+    }
+
+/* 左列の見出しだけ位置調整 */
+.support_grid > div:nth-child(1) h3,
+.support_grid > div:nth-child(3) h3 {
+  margin-left: 2rem;  /* ← 1〜3remで微調整 */
+}
+
+    
+ /* 星 */
+.support_text li::before {
+  margin-left: 1em;    
+  top: 0.3rem;
+    }    
+    /* 左列（左上・左下）だけ星を微調整 */
+.support_grid > div:nth-child(2) li::before,
+.support_grid > div:nth-child(4) li::before {
+  margin-left: 2rem;   /* ← 1.5〜2.5emで調整 */
+}
+
+    /* 左列（左上・左下）だけ星を微調整 */
+.support_grid > div:nth-child(1) li::before,
+.support_grid > div:nth-child(3) li::before {
+  margin-left: -0.5rem;   /* ← 1.5〜2.5emで調整 */
+}
+
+
+  /* ================================
+   creation 全体
+================================ */
+
+.creation_title {
+    top: -2rem; 
+}
+
+.creation_box {
+    margin-top: -18rem;
+}
+
+
+.dots {
+bottom: 25%;
+}
+
+  /* ================================
+   スライドショー
+================================ */
+.slideshow-container {
+    top: 53%;
+}
+
+/* ================================
+   ポップアップ
+================================ */
+
+/* ポップアップ内の写真 */
+.creation_popup_image {
+    margin-top: -2rem;  /* 下方向に配置 */
+}
+
+/* 文字 */
+.creation_popup_text {
+    margin-top: -1rem;
+    font-size: 0.7rem;
+}
+
+/* 閉じるボタン */
+.popup_close {
+    top: 3rem;
+    right: 15rem;
+}
+
+/* 詳しく見るボタン */
+.creation_popup_link {
+    margin-top: 0rem;  /* 文字との間隔を調整 */
+    padding: 0.5rem 1rem;
+}
+
+
+  
+  /* ================================
+   vision 全体
+================================ */
+#vision {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.vision_box {
+  margin-top: -50rem;
+}
+
+.vision_title { 
+    top: -11.5rem; 
+}
+
+.vision_background_frame {
+    top: -3%;
+}
+
+.vision_frame {
+  top: 20%;
+}
+
+.vision_text h2{
+  font-size: 1rem;
+margin-top: -1%;
+}
+/* レース枠の上に文字をのせる */
+.vision_text {
+  position: absolute;
+  top: 30%;
+  left: 20%;
+  width: 70%;
+  text-align: left;
+  line-height: 2.4;
+    font-size: 0.55rem;
+
+}
+
+
+
+.future_text{
+  top: 31%;
+  left: 15%;
+  width: 80%;
+  font-size: 0.4rem;
+
+}
+
+
+.future_block h3 {
+  font-size: 0.7rem;
+  margin: 0;
+  padding: 0;
+}
+
+
+.vision_dotline{
+  border-top: 4px dotted #ff4d4d;
+  width: 100%;
+  margin: 1rem auto;
+}
+
+/* 真ん中の点線 */
+.future_rows::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  border-left: 4px dotted #ff4d4d;
+  transform: translateX(-50%);
+}
+
+/* 星アイコン */
+.future_rows li::before {
+  left: 0;
+  top: 0.2rem;
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+
+#vision .future_rows {
+  display: flex;
+  justify-content: flex-start; /* ← これに変更 */
+  gap: 2rem;                   /* ← 好きな間隔にする */
+}
+
+
+
+  /* ================================
+   contact 全体
+================================ */
+
+/* ===== mailリンク専用 ===== */
+#contact {
+  height: 400px;
+  overflow: hidden;
+  text-align: center;
+  padding-top: 0;
+  margin-top: 0;
+
+  padding-bottom: 10rem;
+  margin-bottom: 0;
+  height: auto;
+  min-height: 0s;
+}
+
+
+
+.contact_lace img {
+  display: block;
+}
+
+/* レース */
+.contact_lace {
+  top: -50%;
+    padding-bottom: 0;
+  margin-bottom: 0;
+
+}
+
+.contact_title {
+  position: relative;
+  top: 5rem;  /* ← 見た目だけ動く */
+}
+
+
+.contact_box{
+  margin-top: -6%;
+  margin-bottom: 0;
+
+}
+
+.contact_more_btn{
+  top: -2rem;
+}
+
+}
+
+
+
+/* スマホ */
+@media (max-width: 480px) {
+  /* TOP */
+/* #top 全体を少し上に */
+  #top {
+    margin-top: 5%; /* 元の flex はそのまま活かす */
+  }
+
+  /* タイトルを少し上に */
+  .top_title {
+   top: 17%; /* 上に寄せる */
+  }
+
+.heart_frame {
+  position: absolute; /* 念のため */
+  top:5%;           /* 画面上からの位置を % で指定 */
+  left: 50%;          /* 横中央の基準 */
+  transform: translateX(-50%); /* 横中央揃え */
+  margin: 0;          /* 力技は使わない */
+  width: 50%;         /* サイズ調整 */
+}
+
+  /* リボン装飾 */
+  .red_ribon {
+    top: 17%; /* 上に寄せる */
+  }
+
+  /* ケーキ装飾 */
+  .top_cake {
+    top: 23%; /* 上に寄せる */
+  }
+
+  /* PCメニューの位置調整 */
+  .menu_list {
+    margin-top: 0%; /* 必要なら微調整 */
+  }
+/* --- 装飾　いちご--- */
+.top_strawberry {
+    top: 20%; /* 上に寄せる */
+  
+}
+
+  /* ================================
+   Profile 全体
+================================ */
+  .profile_box {
+    margin-top: -190%;
+  }   
+
+  .profile_title{
+    position: absolute;
+    top: -530%;
+    left: 45%;
+  }
+  .profile_text {
+    top: 20%;
+    font-size: clamp(0.5rem, 1.4vw, 1.4rem);
+    gap: 0.5rem;
+    left: -10%;
+  }
+
+
+  .profile_backgraund_fram {
+  top: -22%;
+  left: 43%;
+  width: 110%;
+
+  }
+
+.profile_message {
+  left: 18%;
+  font-size: clamp(0.5rem, 1.5vw, 1.5rem);
+}
+
+
+/* ================================
+   Skill & License 全体
+================================ */
+
+.skill_license_box {
+  margin-top: -50rem;
+}
+
+.skill_licensee_title {
+  top: -48rem;
+}
+
+.license_text {
+  font-size: 0.6rem;
+  line-height: 1rem;
+  left: 3%;
+  top: 2%;
+}
+
+.skill_text {
+  font-size: 0.4rem;
+  line-height: 0.5rem;
+  width: 50%;
+  left: 47%;
+  top: 4%;
+}
+
+/* Skill / License 内の ul の余白をリセット */
+.skill_text ul,
+.license_text ul {
+  margin: 0;
+  padding: 0;
+}
+
+
+/* ================================
+   テキストタイトル
+================================ */
+
+.skill_text h2,
+.license_text h2,
+.license_text h3 {
+  font-size: 1rem;
+  padding: 0;
+  margin: 0;
+}
+
+/* ================================
+   li 個別調整
+================================ */
+
+.license_text li {
+  margin-left: -8rem;
+  top: 0.3rem;
+}
+
+.skill_text li {
+  margin-left: -3rem;
+  top: 1rem;
+  height: 1rem;
+}
+
+/* 星（License） */
+.license_text li::before {
+  margin-left: 3rem;
+  top: 0.3rem;
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+/* 左列の li の文字だけ */
+.skill_grid > div:nth-child(1) li,
+.skill_grid > div:nth-child(3) li {
+  padding-left: 3rem;
+}
+
+/* 左列 li の星だけ右にずらす */
+.skill_grid > div:nth-child(1) li::before,
+.skill_grid > div:nth-child(3) li::before {
+  margin-left: 4rem;
+  top: 0rem;
+}
+
+/* 星（Skill 共通） */
+.skill_text li::before {
+  margin-left: -0.3rem;
+  top: 0rem;
+  width: 0.4rem;
+  height: 0.4rem;
+}
+
+/* ================================
+   小さい項目
+================================ */
+
+.small_item {
+  font-size: 0.3rem;
+  line-height: 1.7em;
+}
+
+/* ================================
+   四分割グリッド
+================================ */
+
+.skill_grid::before { 
+    position: absolute;
+    content: '';
+    top: 10%;    /* 上から少し下げる */
+    bottom: 50%; /* 下から少し上げる */
+    left: 40%; 
+    border-left: 4px dotted #ff4d4d; 
+}
+
+.skill_grid::after {
+    position: absolute;
+    content: '';
+    top: 50%; 
+    left: 5%;   /* 左端少し内側 */
+    right: 10%;  /* 右端少し内側 */
+    border-top: 4px dotted #ff4d4d; 
+}
+
+/* セクションタイトル */
+.skill_grid h3 {
+  font-size: 0.5rem;
+  margin-left: -2rem;          /* ← 上下左右の余白を全部消す */
+  padding: 0;
+}
+
+/* ================================
+   線装飾
+================================ */
+
+.license_dotline {
+  margin-left: 10%;
+  margin-top: 5%;
+}
+
+  /* ================================
+   characteristics 全体
+================================ */
+
+.characteristics_wrapper{
+  top: -4rem;        
+}
+
+/* タイトル */
+.characteristics_title {
+    top: -2rem;
+}
+
+/* 背景飾り */
+.characteristics_backgraund_fram {
+  top: 25%;
+}
+
+/* 見出し */
+.character_text h2 {
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
+  margin-top: 10%;
+}
+
+/* リスト */
+.character_text li {
+  font-size: clamp(0.5rem, 1.2vw, 1.2rem);
+}
+
+.character_small_item {
+  font-size: 0.5rem;
+}
+
+
+
+
+/* ▼ PDFカバー ▼ */
+.pdf_cover {
+  margin-top: -2rem;  /* 正の値で下に移動 */
+}
+
+
+/* ▼ 閉じるボタン ▼ */
+.popup_close {
+  top: 5rem;
+  right: 15rem;
+  font-size: 1rem;
+}
+
+
+/* ▼ PDFリンク ▼ */
+.pdf_link {
+  padding: 0.3em 0.5em;
+  font-size: 0.5;
+}
+
+/* ▼ タイトル ▼ */
+.popup_title {
+  font-family: "Shippori Mincho", serif;
+  font-size: 1;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem; 
+  color: rgba(125, 96, 74, 0.85);
+  line-height: 1.2;
+}
+
+/* ▼ 説明文 ▼ */
+.popup_text {
+  font-size: 0.4;
+  margin-top: -0.5rem;
+}
+
+
+.button_wrapper {
+  bottom: -2rem;
+  right: 3rem;
+}
+
+
+
+/* ================================
+   support 全体
+================================ */
+.support_box {
+  margin-top: -40rem;
+}
+
+/* タイトル */
+.support_title {
+  top: -18rem; 
+}
+
+/* 背景フレーム（大きいやつ） */
+.support_backgraund_fram {
+  top:20%;
+}
+
+/* 左右の小フレーム（背景装飾） */
+.support_cake_left {
+  top: 50%;
+}
+
+.support_frame_right {
+  top: 35%;
+  width: 53%;
+  right: 6%;
+}
+
+/* テキスト本体（最前面に重ねる） */
+.support_text {
+  margin-top: 55%;
+  right: -10%;
+  width: 90%;
+  font-size: clamp(0.7rem, 0.9vw, 0.9rem);
+}
+
+/* Support セクション専用 label / value / row */
+
+#support .label {
+    width: 100px;       /* ラベル幅を少し狭く */
+    font-weight: bold;
+    white-space: nowrap;
+    text-align: left;
+    position: relative;
+    padding-right: 0.1rem; /* コロンとの隙間を狭く */
+}
+
+.support_grid h3{
+  height: 10%;
+    font-size: 1rem;
+
+}
+
+/* 左上・左下だけ少し右に寄せる */
+.support_grid > div:nth-child(1),
+.support_grid > div:nth-child(3) {
+  padding-left: 7rem; 
+}
+
+/* グリッド配置（幅のズレを根本解決） */
+.support_grid {
+  gap: 2rem;
+  top: 40%;
+}
+
+
+.support_grid::before { 
+    left: 55%; 
+}
+
+/* 点線横クロス */
+.support_grid::after {
+     left: 23%; 
+     width: 65%;
+    }
+
+/* 左列の見出しだけ位置調整 */
+.support_grid > div:nth-child(1) h3,
+.support_grid > div:nth-child(3) h3 {
+  margin-left: 2rem;  /* ← 1〜3remで微調整 */
+}
+
+    
+ /* 星 */
+.support_text li::before {
+  margin-left: 1em;    
+  top: 0.3rem;
+    }    
+    /* 左列（左上・左下）だけ星を微調整 */
+.support_grid > div:nth-child(2) li::before,
+.support_grid > div:nth-child(4) li::before {
+  margin-left: 2rem;   /* ← 1.5〜2.5emで調整 */
+}
+
+    /* 左列（左上・左下）だけ星を微調整 */
+.support_grid > div:nth-child(1) li::before,
+.support_grid > div:nth-child(3) li::before {
+  margin-left: -0.5rem;   /* ← 1.5〜2.5emで調整 */
+}
+
+
+  /* ================================
+   creation 全体
+================================ */
+
+.creation_title {
+    top: -2rem; 
+}
+
+.creation_box {
+    margin-top: -18rem;
+}
+
+
+.dots {
+bottom: 25%;
+}
+
+  /* ================================
+   スライドショー
+================================ */
+.slideshow-container {
+    top: 53%;
+}
+
+/* ================================
+   ポップアップ
+================================ */
+
+/* ポップアップ内の写真 */
+.creation_popup_image {
+    margin-top: -2rem;  /* 下方向に配置 */
+}
+
+/* 文字 */
+.creation_popup_text {
+    margin-top: -1rem;
+    font-size: 0.7rem;
+}
+
+/* 閉じるボタン */
+.popup_close {
+    top: 3rem;
+    right: 15rem;
+}
+
+/* 詳しく見るボタン */
+.creation_popup_link {
+    margin-top: 0rem;  /* 文字との間隔を調整 */
+    padding: 0.5rem 1rem;
+}
+
+
+  
+  /* ================================
+   vision 全体
+================================ */
+#vision {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.vision_box {
+  margin-top: -50rem;
+}
+
+.vision_title { 
+    top: -11.5rem; 
+}
+
+.vision_background_frame {
+    top: -3%;
+}
+
+.vision_frame {
+  top: 20%;
+}
+
+.vision_text h2{
+  font-size: 1rem;
+margin-top: -1%;
+}
+/* レース枠の上に文字をのせる */
+.vision_text {
+  position: absolute;
+  top: 30%;
+  left: 20%;
+  width: 70%;
+  text-align: left;
+  line-height: 2.4;
+    font-size: 0.55rem;
+
+}
+
+
+
+.future_text{
+  top: 31%;
+  left: 15%;
+  width: 80%;
+  font-size: 0.4rem;
+
+}
+
+
+.future_block h3 {
+  font-size: 0.7rem;
+  margin: 0;
+  padding: 0;
+}
+
+
+.vision_dotline{
+  border-top: 4px dotted #ff4d4d;
+  width: 100%;
+  margin: 1rem auto;
+}
+
+/* 真ん中の点線 */
+.future_rows::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  border-left: 4px dotted #ff4d4d;
+  transform: translateX(-50%);
+}
+
+/* 星アイコン */
+.future_rows li::before {
+  left: 0;
+  top: 0.2rem;
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+
+#vision .future_rows {
+  display: flex;
+  justify-content: flex-start; /* ← これに変更 */
+  gap: 2rem;                   /* ← 好きな間隔にする */
+}
+
+
+
+  /* ================================
+   contact 全体
+================================ */
+
+/* ===== mailリンク専用 ===== */
+#contact {
+  height: 400px;
+  overflow: hidden;
+  text-align: center;
+  padding-top: 0;
+  margin-top: 0;
+
+  padding-bottom: 10rem;
+  margin-bottom: 0;
+  height: auto;
+  min-height: 0s;
+}
+
+
+
+.contact_lace img {
+  display: block;
+}
+
+/* レース */
+.contact_lace {
+  top: -50%;
+    padding-bottom: 0;
+  margin-bottom: 0;
+
+}
+
+.contact_title {
+  position: relative;
+  top: 5rem;  /* ← 見た目だけ動く */
+}
+
+
+.contact_box{
+  margin-top: -6%;
+  margin-bottom: 0;
+
+}
+
+.contact_more_btn{
+  top: -2rem;
+}
+
+
+
+}
+
+
+/* ===============================
+   ハンバーガーメニュー（共通）
+=============================== */
+
+/* ハンバーガー本体 */
+.hamburger {
+  display: none; /* ← PCでは非表示 */
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: 32px;
+  height: 24px;
+
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10000;
+}
+
+/* 三本線 */
+.hamburger span {
+  display: block;
+  height: 4px;
+  width: 100%;
+  background: white;
+  border-radius: 2px;
+}
+
+/* ハンバーガー共通 */
+.hamburger {
+  display: none; /* PCでは非表示 */
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  width: 32px;
+  height: 24px;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+.hamburger span {
+  display: block;
+  height: 4px;
+  width: 100%;
+  background: white;
+  border-radius: 2px;
+}
+
+/* スマホ・タブレット用 */
+@media (max-width: 950px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .menu_list {
+    position: fixed;
+    top: 0;
+    right: -100%; /* 初期は画面外 */
+    width: 70%;
+    max-width: 320px;
+    height: 100%;
+  background: rgba(255, 255, 255, 0.8); /* ← 半透明白 */
+  backdrop-filter: blur(5px);           /* ← 背景ぼかし（おしゃれ） */
+  -webkit-backdrop-filter: blur(8px);   /* Safari対応 */
+    color: white;
+    padding-top: 6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    z-index: 9999;
+    transition: right 0.3s ease;
+    overflow-y: auto;
+  }
+
+  .menu_list.active {
+    right: 0; /* 開いたとき */
+  }
+
+  .menu_list li {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .menu_list a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+  }
+}
+
+
+
